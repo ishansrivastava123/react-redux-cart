@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+#root {
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+    height: 64px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.badge {
+    transform: translateY(20%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.badge > svg {
+    color: white;
+    transform: scale(1.3) translate(20%, -10%);
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-icon {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-icon > p {
+    transform: scale(2.2) rotate(45deg);
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transition: all 0.5s;
+}
+
+.cart-icon > p:hover {
+    cursor: pointer;
+    transform: scale(2.75) rotate(45deg);
+    color: red;
+}
+
+.cart-icon > div {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-icon > div > h5 {
+    padding: 0 15px;
+}
+
+.cart-icon > div > svg {
+    margin-right: 10px;
+    color: red;
+    transform: scale(1.2);
+    transition: all 0.5s;
+    animation: vibrate 0.7s infinite alternate linear;
+}
+
+@keyframes vibrate {
+    from {
+        transform: translateY(-15%);
+    }
+    to {
+        transform: translateY(10%);
+    }
+}
+
+.cards {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 100px;
+}
+
+.cards > h2, .item-details > h2 {
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+hr {
+    width: 80%;
+    margin: 0 auto 20px !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 75px !important;
+    gap: 50px;
+}
+
+.card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px 5px #666;
+}
+
+.card > *:first-child {
+    width: 287px;
+    height: 180px;
+    transform: translateX(-12px);
+    object-fit: cover;
+}
+
+.btn {
+    width: 100%;
+}
+
+.item {
+    padding: 0 150px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.item > img {
+    min-width: 200px;
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.rating > span {
+    background-color: #008000;
+    padding: 2px 5px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+.rating > span > svg {
+    font-size: 1rem;
+}
+
+.count {
+    grid-column: 1 / 3;
+    display: flex;
+    margin: 10px auto;
+    height: 50px;
+}
+
+.count > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    width: 45px;
+    height: 45px;
+    margin-top: 20px;
+}
+
+.count > *:first-child {
+    color: green;
+    border: 1px solid green;
+    border-radius: 50%;
+}
+
+.count > *:last-child {
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+}
+
+.count > *:first-child > svg, .count > *:last-child > svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.25);
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.details > *:last-child > svg {
+    color: red;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+table {
+    margin: 30px 10px 0;
+    text-align: center;
+}
+
+table thead tr {
+    border-bottom: 1.5px solid #888;
+    padding: 10px 0;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #888;
+    padding: 10px 0;
+}
+
+table td:nth-child(2) p {
+    margin: 10px auto;
+}
+
+table tbody tr {
+    vertical-align: middle;
+}
+
+table tbody tr td:last-of-type svg {
+    transition: all 0.3s;
+}
+
+table tbody tr td:last-of-type svg:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.total {
+    width: 100%;
+    margin: 15px auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding-bottom: 15px;
+}
+
+.item-pic {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
